@@ -1,0 +1,3 @@
+{
+    "dotnet-test-explorer.testProjectPath": "./PharmaWarehouse.Api.Test/PharmaWarehouse.Api.Test.csproj"
+}

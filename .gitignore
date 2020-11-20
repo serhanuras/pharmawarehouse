@@ -1,0 +1,7 @@
+node_modules
+deleteme
+keepme
+.idea
+obj
+bin
+*.sln

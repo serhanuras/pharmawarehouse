@@ -1,0 +1,44 @@
+﻿{
+  "resources": [
+    {
+      "key": "SalaryCheck",
+      "tr-TR": "Talep edebileceğiniz miktar politikada belirtilen tutarın üzerindedir. Lütfen geçerli bir tutar giriniz.",
+      "en-US": "The amount you can request is above the amount specified in the policy. Please enter a valid amount."
+    },
+    {
+      "key": "SeniorityAlert",
+      "tr-TR": "İhtiyaç Avansı Talebi yapabilmek için kıdem minimum bir yıl olmalıdır.",
+      "en-US": "Seniority should be at least one year in order to make a loan request."
+    },
+    {
+      "key": "ExistOngoingLoanRequest",
+      "tr-TR": "Devam eden ihtiyaç avansı talebiniz bulunmaktadır, yeni bir talep başlatamazsınız.",
+      "en-US": "You cannot initiate a new request while you have an in-flight request."
+    },
+    {
+      "key": "GhostError",
+      "tr-TR": "Bağlantı hatası: daha sonra tekrar deneyiniz.",
+      "en-US": "Connection error: try again later."
+    },
+    {
+      "key": "AbsenceCancel",
+      "tr-TR": "İzin İptal Talebi",
+      "en-US": "Absence Cancel"
+    },
+    {
+      "key": "AbsenceChange",
+      "tr-TR": "İzin Değişiklik Talebi",
+      "en-US": "Absence Change"
+    },
+    {
+      "key": "AbsenceRequest",
+      "tr-TR": "İzin Talebi",
+      "en-US": "Absence Request"
+    },
+    {
+      "key": "ApproveInvoice",
+      "tr-TR": "Fatura Onayı",
+      "en-US": "Approve Invoice"
+    }
+  ]
+}
