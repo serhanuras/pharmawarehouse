@@ -512,3 +512,4 @@ dotnet_diagnostic.SA1649.severity = error
 
 # SA1651: Do not use placeholder elements
 dotnet_diagnostic.SA1651.severity = error
+
