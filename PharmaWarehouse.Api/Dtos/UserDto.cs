@@ -15,8 +15,6 @@ namespace PharmaWarehouse.Api.Dtos
 
         public string LastName { get; set; }
 
-        public string Password { get; set; }
-
         public string RoleName { get; set; }
 
         public long RoleId { get; set; }
