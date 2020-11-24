@@ -1,0 +1,14 @@
+{
+  "login": "Giriş Sayfası",
+  "dashboard": "Panel",
+  "orders": "Siparişler",
+  "order-detail": "Sipariş Detay",
+  "order": "Sipariş Ver",
+  "price-request": "Fiyat Talebi",
+  "messages": "Mesajlar",
+  "settings": "Ayarlar",
+  "tracking": "Takip",
+  "not-found": "Sayfa Bulunamadı",
+  "error-report": "Hata Raporu",
+  "work-in-progress": "Yapım Aşamasında"
+}
