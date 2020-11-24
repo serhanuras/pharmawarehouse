@@ -33,7 +33,7 @@ namespace PharmaWarehouse.Api.Modules.AbstractOriented
 
         private object CachedObjectInvoke(MethodInfo targetMethod, object[] args)
         {
-            var typeAsString = targetMethod.DeclaringType?.ToString().Replace(".Interfaces.I", ".") + ",PharmaWarehouse.Api.Services";
+            var typeAsString = $"{targetMethod.DeclaringType?.ToString().Split("`")[0].Replace(".Interfaces.I", ".")},{targetMethod.DeclaringType.Module.Name.Replace(".dll", string.Empty)}";
 
             Type callType = Type.GetType(typeAsString);
 

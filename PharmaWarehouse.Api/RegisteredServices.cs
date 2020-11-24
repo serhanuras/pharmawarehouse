@@ -18,11 +18,11 @@ namespace PharmaWarehouse.Api
         public static void AddServices(this IServiceCollection services, ServiceProvider serviceProvider, IUnitOfWork unitOfWork, ICacheStore cacheStore)
         {
             // User Service
-            services.AddSingleton<IServiceBase<User>>(opt =>
+            services.AddSingleton<IUserService<User>>(opt =>
             {
                 var logger = serviceProvider.GetService<ILogger<UserService>>();
 
-                return new UserService(logger, unitOfWork, cacheStore);
+                return DynamicProxy<IUserService<User>>.Create(new UserService(logger, unitOfWork, cacheStore), cacheStore);
             });
         }
     }

@@ -9,5 +9,6 @@ namespace PharmaWarehouse.Api.Services.Interfaces
     public interface IUserService<TEntity> : IServiceBase<TEntity>
         where TEntity : class, IEntityBase
     {
+        DateTime GetCachedDateTime();
     }
 }

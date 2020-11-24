@@ -17,13 +17,13 @@ namespace PharmaWarehouse.Api.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase<User, UserDto, UserUpsertDto>
     {
-        private readonly IServiceBase<User> userService;
+        private readonly IUserService<User> userService;
         private readonly IMapper mapper;
 
         public UserController(
             ILogger<UserController> logger,
             IMapper mapper,
-            IServiceBase<User> userService)
+            IUserService<User> userService)
             : base(logger, mapper, userService)
         {
             this.mapper = mapper;
@@ -76,6 +76,19 @@ namespace PharmaWarehouse.Api.Controllers
         public new ActionResult<UserDto> Delete(long id)
         {
             return base.Delete(id);
+        }
+
+        /// <summary>
+        /// Get Item Type By Id.
+        /// </summary>
+        /// <param name="id">Id of the item to get.</param>
+        /// <returns>UserDto.</returns>
+        [ProducesResponseType(400)]
+        [ProducesResponseType(typeof(UserDto), 200)]
+        [HttpGet("[action]")]
+        public ActionResult GetCurrentDate()
+        {
+            return this.Ok(this.userService.GetCachedDateTime());
         }
     }
 }

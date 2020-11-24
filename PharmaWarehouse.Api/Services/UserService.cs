@@ -11,7 +11,7 @@ using SqlKata;
 
 namespace PharmaWarehouse.Api.Services
 {
-    public class UserService : ServiceBase<User>
+    public class UserService : ServiceBase<User>, IUserService<User>
     {
         private readonly ILogger<UserService> logger;
         private readonly ICacheStore cacheStore;
@@ -40,6 +40,12 @@ namespace PharmaWarehouse.Api.Services
 
                 return this.repository.Update(user);
             }
+        }
+
+        [CacheIt(DurationIn.Hours, 1)]
+        public DateTime GetCachedDateTime()
+        {
+            return DateTime.Now;
         }
     }
 }
