@@ -5,10 +5,8 @@ using System.Threading.Tasks;
 
 namespace PharmaWarehouse.Api.Dtos
 {
-    public class UserDto : IDto
+    public class UserDto : BaseDto
     {
-        public long Id { get; set; }
-
         public string Email { get; set; }
 
         public string FirstName { get; set; }

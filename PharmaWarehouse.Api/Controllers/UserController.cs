@@ -17,13 +17,13 @@ namespace PharmaWarehouse.Api.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase<User, UserDto, UserUpsertDto>
     {
-        private readonly IUserService<User> userService;
+        private readonly IServiceBase<User> userService;
         private readonly IMapper mapper;
 
         public UserController(
             ILogger<UserController> logger,
             IMapper mapper,
-            IUserService<User> userService)
+            IServiceBase<User> userService)
             : base(logger, mapper, userService)
         {
             this.mapper = mapper;
@@ -31,7 +31,7 @@ namespace PharmaWarehouse.Api.Controllers
         }
 
         /// <summary>
-        /// Get Item Type By Id.
+        /// Get Item Type By Id. Alsinda su ise yariyor.
         /// </summary>
         /// <param name="paginationDto">PaginationDto object.</param>
         /// <returns>List of UserDto.</returns>

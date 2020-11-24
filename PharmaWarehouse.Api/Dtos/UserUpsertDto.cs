@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace PharmaWarehouse.Api.Dtos
 {
-    public class UserUpsertDto : IUpsertDto
+    public class UserUpsertDto : BaseUpsertDto
     {
-        public long? Id { get; set; }
-
         [EmailAddress]
         [Required(ErrorMessage = "Email is required")]
         [StringLength(16, ErrorMessage = "Must be between 3 and 16 characters", MinimumLength = 3)]

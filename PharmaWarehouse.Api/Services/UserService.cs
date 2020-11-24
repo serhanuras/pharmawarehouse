@@ -11,7 +11,7 @@ using SqlKata;
 
 namespace PharmaWarehouse.Api.Services
 {
-    public class UserService : IUserService<User>
+    public class UserService : ServiceBase<User>
     {
         private readonly ILogger<UserService> logger;
         private readonly ICacheStore cacheStore;
@@ -19,36 +19,12 @@ namespace PharmaWarehouse.Api.Services
         private readonly IUnitOfWork unitOfWork;
 
         public UserService(ILogger<UserService> logger, IUnitOfWork unitOfWork, ICacheStore cacheStore)
+            : base(unitOfWork)
         {
             this.logger = logger;
             this.cacheStore = cacheStore;
             this.unitOfWork = unitOfWork;
             this.repository = this.unitOfWork.GetRepository<User>();
-        }
-
-        public long Count()
-        {
-            return this.repository.Count();
-        }
-
-        public void Delete(long id)
-        {
-            this.repository.Remove(id);
-        }
-
-        public bool Exists(long id)
-        {
-            return this.repository.Exists(id);
-        }
-
-        public User Get(long id)
-        {
-            return this.repository.Get(id);
-        }
-
-        public List<User> GetPageData(int page = 1, int recordsPerPage = 100)
-        {
-            return this.repository.GetPageData(page, recordsPerPage).ToList();
         }
 
         public User Upsert(User user)

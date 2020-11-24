@@ -16,8 +16,8 @@ namespace PharmaWarehouse.Api.Controllers
     [ApiController]
     public abstract class ControllerBase<TEntity, TDto, TUpsertDto> : Controller
         where TEntity : class, IEntityBase
-        where TDto : class, IDto
-        where TUpsertDto : class, IUpsertDto
+        where TDto : BaseDto
+        where TUpsertDto : BaseUpsertDto
     {
         private readonly ILogger logger;
         private readonly IMapper mapper;
@@ -85,7 +85,7 @@ namespace PharmaWarehouse.Api.Controllers
 
             var itemDto = this.mapper.Map<TDto>(item);
 
-            return new CustomCreatedAtRouteResult(itemDto.Id, itemDto);
+            return new CustomCreatedAtRouteResult(item.Id, itemDto);
         }
 
         [ApiExplorerSettings(IgnoreApi = true)]
