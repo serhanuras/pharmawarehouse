@@ -1,5 +1,3 @@
-# xinerji-customer-portal
-
 ## installation
 
 1- install node js
