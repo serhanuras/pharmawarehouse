@@ -6,8 +6,7 @@ using PharmaWarehouse.Api.Entities;
 
 namespace PharmaWarehouse.Api.Services.Interfaces
 {
-    public interface IUserService : IServiceBase<User>
+    public interface IRoleService : IServiceBase<Role>
     {
-        DateTime GetCachedDateTime();
     }
 }

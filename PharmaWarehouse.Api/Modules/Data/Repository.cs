@@ -1,5 +1,9 @@
-﻿using System;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Dynamic;
+using System.Reflection;
 using PharmaWarehouse.Api.Entities;
 using SqlKata;
 using SqlKata.Execution;
@@ -11,7 +15,7 @@ namespace PharmaWarehouse.Api.Modules.Data
     {
         private readonly QueryFactory queryFactory;
 
-        private readonly string repositoryName = (typeof(T).Name + "s").ToUpper();
+        private readonly string repositoryName = typeof(T).Name;
 
         public Repository(QueryFactory queryFactory)
         {
@@ -67,6 +71,24 @@ namespace PharmaWarehouse.Api.Modules.Data
         public Query Query()
         {
             return this.queryFactory.Query(this.repositoryName);
+        }
+
+        public string GetRepositoryTableName()
+        {
+            return this.repositoryName;
+        }
+
+        private void AddProperty(ExpandoObject expando, string propertyName, object propertyValue)
+        {
+            var expandoDict = expando as IDictionary<string, object>;
+            if (expandoDict.ContainsKey(propertyName))
+            {
+                expandoDict[propertyName] = propertyValue;
+            }
+            else
+            {
+                expandoDict.Add(propertyName, propertyValue);
+            }
         }
     }
 }

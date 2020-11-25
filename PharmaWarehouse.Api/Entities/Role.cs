@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using SqlKata;
 
 namespace PharmaWarehouse.Api.Entities
 {
@@ -7,5 +9,8 @@ namespace PharmaWarehouse.Api.Entities
         [Required]
         [MaxLength(50)]
         public string Name { get; set; }
+
+        [SqlKata.Ignore]
+        public List<User> Users { get; set; }
     }
 }

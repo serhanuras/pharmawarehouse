@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace PharmaWarehouse.Api.Entities
 {
@@ -6,7 +6,7 @@ namespace PharmaWarehouse.Api.Entities
     {
         long Id { get; set; }
 
-        DateTime CreatedOn { get; set; }
+        DateTime? CreatedOn { get; set; }
 
         DateTime? UpdatedOn { get; set; }
     }

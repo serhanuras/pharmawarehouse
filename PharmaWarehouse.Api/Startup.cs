@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Reflection;
 using AutoMapper;
@@ -32,6 +32,8 @@ namespace PharmaWarehouse.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddAutoMapper(typeof(Startup));
 
             // Enable Caching
             // In Memory Caching
@@ -89,8 +91,6 @@ namespace PharmaWarehouse.Api
 
             services.AddResponseCaching();
 
-            services.AddAutoMapper(typeof(Startup));
-
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             var serviceProvider = services.BuildServiceProvider();
@@ -98,7 +98,7 @@ namespace PharmaWarehouse.Api
             var unitOfWork = serviceProvider.GetService<IUnitOfWork>();
             var cacheStore = serviceProvider.GetService<ICacheStore>();
 
-            services.AddServices(serviceProvider, unitOfWork, cacheStore);
+            services.AddServices(unitOfWork, cacheStore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

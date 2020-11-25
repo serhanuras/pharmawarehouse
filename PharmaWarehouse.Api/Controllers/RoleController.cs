@@ -15,30 +15,30 @@ namespace PharmaWarehouse.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase<User, UserDto, UserUpsertDto>
+    public class RoleController : ControllerBase<Role, RoleDto, RoleUpsertDto>
     {
-        private readonly IUserService userService;
+        private readonly IRoleService roleService;
         private readonly IMapper mapper;
 
-        public UserController(
-            ILogger<UserController> logger,
+        public RoleController(
+            ILogger<RoleController> logger,
             IMapper mapper,
-            IUserService userService)
-            : base(logger, mapper, userService)
+            IRoleService roleService)
+            : base(logger, mapper, roleService)
         {
             this.mapper = mapper;
-            this.userService = userService;
+            this.roleService = roleService;
         }
 
         /// <summary>
         /// Get Item Type By Id. Alsinda su ise yariyor.
         /// </summary>
         /// <param name="paginationDto">PaginationDto object.</param>
-        /// <returns>List of UserDto.</returns>
+        /// <returns>List of RoleDto.</returns>
         [ProducesResponseType(400)]
-        [ProducesResponseType(typeof(UserDto), 200)]
+        [ProducesResponseType(typeof(RoleDto), 200)]
         [HttpPost]
-        public new ActionResult<List<UserDto>> GetPageData([FromQuery] PaginationDto paginationDto)
+        public new ActionResult<List<RoleDto>> GetPageData([FromQuery] PaginationDto paginationDto)
         {
             return base.GetPageData(paginationDto);
         }
@@ -47,11 +47,11 @@ namespace PharmaWarehouse.Api.Controllers
         /// Get Item Type By Id.
         /// </summary>
         /// <param name="id">Id of the item to get.</param>
-        /// <returns>UserDto.</returns>
+        /// <returns>RoleDto.</returns>
         [ProducesResponseType(400)]
-        [ProducesResponseType(typeof(UserDto), 200)]
+        [ProducesResponseType(typeof(RoleDto), 200)]
         [HttpGet("{id}")]
-        public new ActionResult<UserDto> GetById(long id)
+        public new ActionResult<RoleDto> GetById(long id)
         {
             return base.GetById(id);
         }
@@ -59,36 +59,23 @@ namespace PharmaWarehouse.Api.Controllers
         /// <summary>
         /// Upserting Item.
         /// </summary>
-        /// <param name="userUpsertDto">UpserDto object.</param>
-        /// <returns>UserDto.</returns>
+        /// <param name="roleUpsertDto">UpserDto object.</param>
+        /// <returns>RoleDto.</returns>
         [HttpPost("[action]")]
-        public new ActionResult<UserDto> Upsert(UserUpsertDto userUpsertDto)
+        public new ActionResult<RoleDto> Upsert(RoleUpsertDto roleUpsertDto)
         {
-            return base.Upsert(userUpsertDto);
+            return base.Upsert(roleUpsertDto);
         }
 
         /// <summary>
         /// Delete a item.
         /// </summary>
         /// <param name="id">Id of the item to delete.</param>
-        /// <returns>UserDto.</returns>
+        /// <returns>RoleDto.</returns>
         [HttpDelete("{id}")]
-        public new ActionResult<UserDto> Delete(long id)
+        public new ActionResult<RoleDto> Delete(long id)
         {
             return base.Delete(id);
-        }
-
-        /// <summary>
-        /// Get Item Type By Id.
-        /// </summary>
-        /// <param name="id">Id of the item to get.</param>
-        /// <returns>UserDto.</returns>
-        [ProducesResponseType(400)]
-        [ProducesResponseType(typeof(UserDto), 200)]
-        [HttpGet("[action]")]
-        public ActionResult GetCurrentDate()
-        {
-            return this.Ok(this.userService.GetCachedDateTime());
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 using PharmaWarehouse.Api.Entities;
@@ -26,5 +26,7 @@ namespace PharmaWarehouse.Api.Modules.Data
         long Count();
 
         Query Query();
+
+        string GetRepositoryTableName();
     }
 }

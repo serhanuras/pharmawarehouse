@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,15 +10,15 @@ namespace PharmaWarehouse.Api.Dtos
     {
         [EmailAddress]
         [Required(ErrorMessage = "Email is required")]
-        [StringLength(16, ErrorMessage = "Must be between 3 and 16 characters", MinimumLength = 3)]
+        [StringLength(50, ErrorMessage = "Must be between 3 and 50 characters", MinimumLength = 3)]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "First name is required")]
-        [StringLength(16, ErrorMessage = "Must be between 3 and 16 characters", MinimumLength = 3)]
+        [StringLength(50, ErrorMessage = "Must be between 3 and 50 characters", MinimumLength = 3)]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "First name is required")]
-        [StringLength(16, ErrorMessage = "Must be between 3 and 16 characters", MinimumLength = 3)]
+        [StringLength(50, ErrorMessage = "Must be between 3 and 50 characters", MinimumLength = 3)]
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Password is required")]

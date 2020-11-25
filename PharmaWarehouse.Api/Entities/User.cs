@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace PharmaWarehouse.Api.Entities
@@ -23,6 +23,11 @@ namespace PharmaWarehouse.Api.Entities
 
         [MaxLength(50)]
         public string SecretKey { get; set; }
+
+        public long RoleId { get; set; }
+
+        [SqlKata.Ignore]
+        public Role Role { get; set; }
 
         public DateTime BirthDate { get; set; }
     }

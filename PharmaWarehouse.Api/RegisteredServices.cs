@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,14 +15,26 @@ namespace PharmaWarehouse.Api
 {
     public static class RegisteredServices
     {
-        public static void AddServices(this IServiceCollection services, ServiceProvider serviceProvider, IUnitOfWork unitOfWork, ICacheStore cacheStore)
+        public static void AddServices(this IServiceCollection services, IUnitOfWork unitOfWork, ICacheStore cacheStore)
         {
-            // User Service
-            services.AddSingleton<IUserService<User>>(opt =>
+            services.AddSingleton<IRoleService>(opt =>
             {
+                var serviceProvider = services.BuildServiceProvider();
+
+                var logger = serviceProvider.GetService<ILogger<RoleService>>();
+
+                return DynamicProxy<IRoleService>.Create(new RoleService(logger, unitOfWork, cacheStore), cacheStore);
+            });
+
+            // User Service
+            services.AddSingleton<IUserService>(opt =>
+            {
+                var serviceProvider = services.BuildServiceProvider();
                 var logger = serviceProvider.GetService<ILogger<UserService>>();
 
-                return DynamicProxy<IUserService<User>>.Create(new UserService(logger, unitOfWork, cacheStore), cacheStore);
+                var roleService = serviceProvider.GetService<IRoleService>();
+
+                return DynamicProxy<IUserService>.Create(new UserService(logger, unitOfWork, cacheStore, roleService), cacheStore);
             });
         }
     }
