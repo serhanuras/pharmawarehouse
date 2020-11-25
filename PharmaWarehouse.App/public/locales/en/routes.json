@@ -1,0 +1,14 @@
+{
+  "login": "Login",
+  "dashboard": "Dashboard",
+  "orders": "Orders",
+  "order-detail": "Order Detail",
+  "order": "Order",
+  "messages": "Messages",
+  "price-request": "Price Request",
+  "settings": "Settings",
+  "tracking": "Tracking",
+  "not-found": "Page Not Found",
+  "error-report": "Error Report",
+  "work-in-progress": "Work In Progress"
+}
