@@ -21,6 +21,9 @@ namespace PharmaWarehouse.Api.Entities
         [MaxLength(512)]
         public string Password { get; set; }
 
+        [MaxLength(50)]
+        public string SecretKey { get; set; }
+
         public DateTime BirthDate { get; set; }
     }
 }
