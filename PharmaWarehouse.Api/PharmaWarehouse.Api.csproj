@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<NoWarn>$(NoWarn);1591</NoWarn>
@@ -8,29 +8,18 @@
 		<Authors>Xinerji Technologies</Authors>
 		<EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
 	</PropertyGroup>
-	<ItemGroup>
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\app.config.transform" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\docs\MySqlCommand.xml" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\docs\MySqlCommandBuilder.xml" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\docs\MySqlConnection.xml" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\docs\MySqlConnectionStringBuilder.xml" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\docs\MySqlDataAdapter.xml" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\docs\MySqlDataReader.xml" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\docs\MySqlException.xml" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\docs\MySqlHelper.xml" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\docs\MySqlParameter.xml" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\docs\MySqlParameterCollection.xml" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\docs\MySqlTransaction.xml" />
-		<Content Remove="C:\Users\serhan.uras.IWSR0\.nuget\packages\mysql.data\8.0.9-dmr\contentFiles\any\netstandard1.6\web.config.transform" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+		<PackageReference Include="EntityFramework" Version="6.4.4" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.10" />
 		<PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.10" />
 		<PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
-		<PackageReference Include="MySql.Data" Version="8.0.9-dmr" />
+		<PackageReference Include="MySql.Data" Version="8.0.22" />
+		<PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
 		<PackageReference Include="SqlKata" Version="2.2.0" />
 		<PackageReference Include="SqlKata.Execution" Version="2.2.0" />
 		<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">

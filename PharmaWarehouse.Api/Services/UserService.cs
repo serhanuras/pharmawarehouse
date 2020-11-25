@@ -42,7 +42,7 @@ namespace PharmaWarehouse.Api.Services
             }
         }
 
-        [CacheIt(DurationIn.Hours, 1)]
+        [CacheIt(DurationIn.Days, 1)]
         public DateTime GetCachedDateTime()
         {
             return DateTime.Now;

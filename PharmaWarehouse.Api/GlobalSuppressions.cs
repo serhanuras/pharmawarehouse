@@ -9,3 +9,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1200:Using directives should be placed correctly", Justification = "It is not required to be set inside namespace.", Scope = "module")]
 [assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1633:File should have header", Justification = "It is not required to be set file header.", Scope = "module")]
 [assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1602:Enumeration items should be documented", Justification = "It is not required to be documented.", Scope = "module")]
+[assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1601:Partial elements should be documented", Justification = "It is not required to be documented.", Scope = "type", Target = "~T:PharmaWarehouse.Api.Migrations.Initial")]
